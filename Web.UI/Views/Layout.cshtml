@@ -1,0 +1,42 @@
+﻿@inherits  UmbracoTemplatePage
+@{
+    bool isDebugTrue = HttpContext.Current.IsDebuggingEnabled;
+}
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @if (isDebugTrue)
+    {
+        @*Un-minified styles*@
+        <link href="~/Content/bootstrap.css" rel="stylesheet" />
+        <link href="~/Content/Site.css" rel="stylesheet" />
+       
+    }
+    else
+    {
+        @*Minified Styles*@
+        <link href="~/Content/Site.css" rel="stylesheet" />
+    }
+</head>
+<body>
+
+    <main>
+        @RenderBody()
+    </main>
+
+    @if (isDebugTrue)
+    {
+        @*Un-minified scripts*@
+    }
+    else
+    {
+        @*Minified scripts*@
+    }
+</body>
+</html>
+
+
+

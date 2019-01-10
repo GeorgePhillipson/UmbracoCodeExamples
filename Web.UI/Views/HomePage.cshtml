@@ -1,0 +1,67 @@
+﻿@using Web.Helper.SearchHelper
+@inherits UmbracoViewPage
+@{
+    Layout = "Layout.cshtml";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Search Via RenderMvcController method is GET</h1>
+            <form method="get" action="@SearchHelper.SearchPageUrl()" name="RenderMvc" id="RenderMvc">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="q" id="q" placeholder="Enter keyword 'dog' or 'cat' or 'fish'" />
+                </div>
+                <br />
+                <button class="btn btn-info" type="submit">Search</button>
+            </form>
+            <h1>Search Via RenderMvcController method is Post</h1>
+            <form method="post" action="@SearchHelper.SearchPageUrl()" name="RenderMvcPost" id="RenderMvcPost">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="q" id="q" placeholder="Enter keyword 'dog' or 'cat' or 'fish'" />
+                </div>
+                <br />
+                <button class="btn btn-success" type="submit">Search</button>
+            </form>
+            <hr />
+            <h1>Search Via SurfaceController method is GET</h1>
+            <form method="get" action="@SearchHelper.SearchPageSurfaceUrl()" name="Surface" id="Surface">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="q" id="q" placeholder="Enter keyword 'dog' or 'cat' or 'fish'" />
+                </div>
+                <br />
+                <button class="btn btn-dark" type="submit">Search</button>
+            </form>
+            <hr />
+            <h1>Search Via SurfaceController method is Post</h1>
+            <form method="post" action="@SearchHelper.SearchPageSurfaceUrl()" name="SurfacePost" id="SurfacePost">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="q" id="q" placeholder="Enter keyword 'dog' or 'cat' or 'fish'" />
+                </div>
+                <br />
+                <button class="btn btn-danger" type="submit">Search</button>
+            </form>
+            <hr/>
+            <h2>Search Via SurfaceController method is Post using Html.BeginUmbracoForm</h2>
+            @using (Html.BeginUmbracoForm("SearchFormUmbraco", "SearchFormNotRoute"))
+            {
+                <div class="form-group">
+                    <input class="form-control" type="text" name="q" id="q" placeholder="Enter keyword 'dog' or 'cat' or 'fish'"/>
+                </div>
+            <br />
+            <button class="btn btn-danger" type="submit">Search</button>
+            }
+            
+            <hr/>
+            <h3>Search Via SurfaceController method is Get using Html.BeginUmbracoForm</h3>
+            @using (Html.BeginUmbracoForm("SearchFormUmbraco", "SearchFormNotRoute", FormMethod.Get))
+            {
+                <div class="form-group">
+                    <input class="form-control" type="text" name="q" id="q" placeholder="Enter keyword 'dog' or 'cat' or 'fish'"/>
+                </div>
+                <br />
+                <button class="btn btn-danger" type="submit">Search</button>
+            }
+
+        </div>
+    </div>
+</div>

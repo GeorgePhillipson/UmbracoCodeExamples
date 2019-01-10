@@ -1,0 +1,16 @@
+﻿@inherits UmbracoViewPage<Web.Model.SearchViewModel.SearchPageRenderMvcControllerViewModel>
+@{
+    Layout = "Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <p>Your Search found</p>
+            @foreach (var pet in Model.DisplaySearchResult)
+            {
+                <p>@pet.PetType</p>
+            }
+        </div>
+    </div>
+</div>

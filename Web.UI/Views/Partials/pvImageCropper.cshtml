@@ -1,0 +1,36 @@
+﻿@inherits UmbracoViewPage<Web.Model.ResponsiveImages.ResponsiveImageViewModel>
+
+@*<h1>X-Large Image</h1>
+
+<img src="@Model.XLargeImage" />
+
+<h1>Large Image</h1>
+
+<img src="@Model.Desktop" />
+
+<h1>Landscape</h1>
+
+<img src="@Model.LandScape" />
+
+<h1>Tablet</h1>
+
+<img src="@Model.Tablet" />
+
+<h1>Mobile</h1>
+
+<img src="@Model.Mobile" />
+
+<hr />
+
+<h1>Picture, responsive setup and will return correct image for viewport</h1>
+<picture>
+    <source media="(min-width: 1280px)" srcset="@Model.XLargeImage">
+    <source media="(min-width: 992px)" srcset="@Model.Desktop">
+    <source media="(min-width: 768px)" srcset="@Model.LandScape">
+    <source media="(min-width: 576px)" srcset="@Model.Tablet">
+    <source media="(min-width: 360px)" srcset="@Model.Mobile">
+    <img srcset="@Model.XLargeImage" src="@Model.XLargeImage" class="img-fluid">
+</picture>*@
+
+<h1>Imgage, responsive setup and will return correct image for viewport</h1>
+<img srcset="@Model.Mobile @Model.CropWidthMobile, @Model.Tablet @Model.CropWidthTablet, @Model.LandScape @Model.CropWidthLandscape, @Model.Desktop @Model.CropWidthDesktop, @Model.XLargeImage @Model.CropWidthXLarge" src="@Model.XLargeImage" class="img-fluid"/>

@@ -1,0 +1,9 @@
+﻿@inherits UmbracoTemplatePage
+@{
+	Layout = "Layout.cshtml";
+}
+<h1>This image is in the main view</h1>
+@*<img src="@Model.Content.GetCropUrl(propertyAlias:"responsiveImageExample", cropAlias:"X-Large-Desktop")"/>*@
+<hr/>
+<h1>This image below are returned froma partials view using a controller</h1>
+@{ Html.RenderAction("Index", "ResponsiveImage"); }

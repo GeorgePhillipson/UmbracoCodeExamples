@@ -1,0 +1,22 @@
+﻿@inherits UmbracoViewPage<Web.Model.NullCheck.CheckForNullViewModel>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <p>Value of test string is: @Model.TestString</p>
+            <hr/>
+            <div>
+                <h2>Value of RTE</h2>
+                @Model.TestRte
+            </div>
+            <hr/>
+            @if (!string.IsNullOrEmpty(Model.TestImage))
+            {
+                <img src="@Model.TestImage" />
+            }
+            else
+            {
+                <p>Image has no value</p>
+            }
+        </div>
+    </div>
+</div>
