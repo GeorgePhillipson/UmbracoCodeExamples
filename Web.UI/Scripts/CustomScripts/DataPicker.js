@@ -1,4 +1,5 @@
 ﻿$(document).ready(function () {
+    //Custom script for datepicker
     var array;
     $.getJSON("/Umbraco/Surface/Booking/GetCurrentBookings", function (data) {
         array = data.BookingArray;
